@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "titulo": "Radiação no cotidiano",
+    "tema": "Radiação",
+    "tipo": "Artigo",
+    "descricao": "Material introdutório para consultar fontes naturais e artificiais de radiação.",
+    "fonte": "U.S. EPA",
+    "url": "https://www.epa.gov/radiation/radiation-sources-and-doses"
+  },
+  {
+    "id": 2,
+    "titulo": "Irradiação de alimentos",
+    "tema": "Aplicações da tecnologia nuclear",
+    "tipo": "Artigo",
+    "descricao": "Material de apoio sobre aplicações da irradiação na conservação de alimentos.",
+    "fonte": "U.S. FDA",
+    "url": "https://www.fda.gov/food/buy-store-serve-safe-food/food-irradiation-what-you-need-know"
+  },
+  {
+    "id": 3,
+    "titulo": "Introdução à ciência nuclear",
+    "tema": "Conceitos básicos",
+    "tipo": "Guia",
+    "descricao": "Referência educativa para aprofundar os conceitos básicos de ciência nuclear.",
+    "fonte": "U.S. NRC",
+    "url": "https://www.nrc.gov/education-regulatory-research/the-student-corner/science-101"
+  }
+]
