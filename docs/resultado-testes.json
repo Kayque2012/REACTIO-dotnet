@@ -1,0 +1,142 @@
+[
+  {
+    "teste": "Catálogo vazio: listagem sem falha",
+    "resultado": "APROVADO"
+  },
+  {
+    "teste": "Opção inválida mantém menu disponível",
+    "resultado": "APROVADO"
+  },
+  {
+    "teste": "Cadastro válido de artigo e gravação JSON",
+    "resultado": "APROVADO"
+  },
+  {
+    "teste": "Nova execução preserva os registros",
+    "resultado": "APROVADO"
+  },
+  {
+    "teste": "Busca por trecho do título e maiúsculas",
+    "resultado": "APROVADO"
+  },
+  {
+    "teste": "Busca por tema ignora maiúsculas",
+    "resultado": "APROVADO"
+  },
+  {
+    "teste": "Busca sem resultado",
+    "resultado": "APROVADO"
+  },
+  {
+    "teste": "Busca vazia é rejeitada sem encerrar o menu",
+    "resultado": "APROVADO"
+  },
+  {
+    "teste": "Busca longa é rejeitada",
+    "resultado": "APROVADO"
+  },
+  {
+    "teste": "Regra de negócio: título duplicado não é salvo",
+    "resultado": "APROVADO"
+  },
+  {
+    "teste": "Vídeo recebe próximo ID",
+    "resultado": "APROVADO"
+  },
+  {
+    "teste": "Guia recebe próximo ID",
+    "resultado": "APROVADO"
+  },
+  {
+    "teste": "Tipo inválido: 99",
+    "resultado": "APROVADO"
+  },
+  {
+    "teste": "Tipo inválido: abc",
+    "resultado": "APROVADO"
+  },
+  {
+    "teste": "Tipo inválido: 0",
+    "resultado": "APROVADO"
+  },
+  {
+    "teste": "Validação titulo / vazio",
+    "resultado": "APROVADO"
+  },
+  {
+    "teste": "Validação titulo / ab",
+    "resultado": "APROVADO"
+  },
+  {
+    "teste": "Validação titulo / excesso de tamanho",
+    "resultado": "APROVADO"
+  },
+  {
+    "teste": "Validação tema / vazio",
+    "resultado": "APROVADO"
+  },
+  {
+    "teste": "Validação tema / xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "resultado": "APROVADO"
+  },
+  {
+    "teste": "Validação descricao / curta",
+    "resultado": "APROVADO"
+  },
+  {
+    "teste": "Validação descricao / excesso de tamanho",
+    "resultado": "APROVADO"
+  },
+  {
+    "teste": "Validação fonte / vazio",
+    "resultado": "APROVADO"
+  },
+  {
+    "teste": "Validação fonte / xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "resultado": "APROVADO"
+  },
+  {
+    "teste": "Validação url / http://example.com",
+    "resultado": "APROVADO"
+  },
+  {
+    "teste": "Validação url / nao-e-url",
+    "resultado": "APROVADO"
+  },
+  {
+    "teste": "Validação url / vazio",
+    "resultado": "APROVADO"
+  },
+  {
+    "teste": "JSON malformado não é sobrescrito",
+    "resultado": "APROVADO"
+  },
+  {
+    "teste": "JSON nulo não é sobrescrito",
+    "resultado": "APROVADO"
+  },
+  {
+    "teste": "Registro nulo não é sobrescrito",
+    "resultado": "APROVADO"
+  },
+  {
+    "teste": "Registro inválido não é sobrescrito",
+    "resultado": "APROVADO"
+  },
+  {
+    "teste": "IDs duplicados no arquivo são detectados",
+    "resultado": "APROVADO"
+  },
+  {
+    "teste": "Erro de gravação é tratado e mantém o programa aberto",
+    "resultado": "APROVADO"
+  },
+  {
+    "teste": "JSON de exemplos carrega três materiais",
+    "resultado": "APROVADO"
+  },
+  {
+    "teste": "Encerramento aceita espaços na opção zero",
+    "resultado": "APROVADO"
+  }
+]
