@@ -10,3 +10,4 @@ dados/
 *.suo
 .env
 .DS_Store
+Thumbs.db
