@@ -30,9 +30,10 @@ Também é possível abrir o `.csproj` no Rider ou Visual Studio com suporte ao 
 - **1:** cadastrar título, tema, tipo (1 artigo, 2 vídeo, 3 guia), descrição, fonte e URL HTTPS.
 - **2:** listar todos os materiais, ordenados por título.
 - **3:** buscar por trecho do título ou tema, ignorando maiúsculas/minúsculas.
+- **4:** filtrar materiais por tipo (artigo, vídeo ou guia).
 - **0:** sair.
 
-A entidade **MaterialApoio** possui esses atributos e um ID gerado. Os campos são obrigatórios e têm limites de tamanho; o tipo e o endereço são validados. **Regra de negócio:** bloquear títulos repetidos, ignorando maiúsculas/minúsculas e espaços externos. Erros de entrada e arquivo são tratados com `try/catch`, mantendo o menu aberto.
+A entidade **MaterialApoio** possui esses atributos e um ID gerado. Os campos são obrigatórios e têm limites de tamanho; o tipo e o endereço são validados. **Regra de negócio:** bloquear títulos repetidos, ignorando maiúsculas/minúsculas e espaços externos. A busca também ignora acentos. Erros de entrada e arquivo são tratados com `try/catch`, mantendo o menu aberto.
 
 ## Estrutura e dados
 
