@@ -1,5 +1,7 @@
 using Reactio.Models;
 using Reactio.Repositories;
+using System.Globalization;
+using System.Text;
 
 namespace Reactio.Services;
 
@@ -42,13 +44,33 @@ public class CatalogoService
         return repository.Carregar().OrderBy(m => m.Titulo, StringComparer.OrdinalIgnoreCase).ToList();
     }
 
+    public List<MaterialApoio> ListarPorTipo(TipoMaterial tipo)
+    {
+        if (!Enum.IsDefined(tipo))
+            throw new ArgumentException("Tipo inválido. Use 1 (artigo), 2 (vídeo) ou 3 (guia).", nameof(tipo));
+
+        return Listar().Where(m => m.Tipo == tipo).ToList();
+    }
+
     public List<MaterialApoio> Buscar(string termo)
     {
         if (string.IsNullOrWhiteSpace(termo) || termo.Trim().Length > 120)
             throw new ArgumentException("Informe um termo de pesquisa com até 120 caracteres.");
 
-        termo = termo.Trim();
-        return Listar().Where(m => m.Titulo.Contains(termo, StringComparison.OrdinalIgnoreCase)
-            || m.Tema.Contains(termo, StringComparison.OrdinalIgnoreCase)).ToList();
+        termo = NormalizarTexto(termo.Trim());
+        return Listar().Where(m => NormalizarTexto(m.Titulo).Contains(termo, StringComparison.OrdinalIgnoreCase)
+            || NormalizarTexto(m.Tema).Contains(termo, StringComparison.OrdinalIgnoreCase)).ToList();
+    }
+
+    private static string NormalizarTexto(string texto)
+    {
+        var decomposed = texto.Normalize(NormalizationForm.FormD);
+        var resultado = new StringBuilder(decomposed.Length);
+        foreach (var caractere in decomposed)
+        {
+            if (CharUnicodeInfo.GetUnicodeCategory(caractere) != UnicodeCategory.NonSpacingMark)
+                resultado.Append(caractere);
+        }
+        return resultado.ToString().Normalize(NormalizationForm.FormC);
     }
 }
