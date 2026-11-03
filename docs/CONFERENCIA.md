@@ -16,7 +16,7 @@ A implementação e a documentação atendem aos requisitos técnicos da PoC con
 | Entidade: atributos e validações | 20 | `MaterialApoio`: Id, Titulo, Tema, Tipo, Descricao, Fonte e Url, com validações. |
 | Regra de negócio e erros | 15 | Títulos duplicados são rejeitados. `try/catch` mantém o programa em execução diante dos erros previstos. |
 | Cadastro | 10 | Opção 1 gera ID e salva o material. |
-| Listagem e busca | 15 | Opções 2 e 3: lista completa e pesquisa parcial por título ou tema. |
+| Listagem e busca | 15 | Opções 2, 3 e 4: lista completa, pesquisa parcial por título ou tema (sem distinção de acentos) e filtro por tipo. |
 | Persistência | 10 | JSON salvo em `dados/materiais.json`, reutilizado entre processos. JSON é uma das opções expressamente aceitas na página 21, com a mesma pontuação do Oracle. |
 
 A funcionalidade é complementar à API Java, conforme a página 20: Java mantém afirmações e avalia respostas ao quiz; .NET mantém um catálogo de materiais de apoio. Não há gabarito, quiz ou repetição da entidade Afirmacao neste console. Esse catálogo também corresponde à contribuição .NET prevista no PDF de Compliance.
@@ -29,7 +29,7 @@ A funcionalidade é complementar à API Java, conforme a página 20: Java manté
 - Descrição: obrigatória, 10 a 500 caracteres.
 - Fonte: obrigatória, 2 a 100 caracteres.
 - URL: HTTPS absoluta e válida, até 500 caracteres.
-- Busca: termo não vazio, até 120 caracteres; não remove acentos.
+- Busca: termo não vazio, até 120 caracteres; ignora maiúsculas/minúsculas e acentos.
 - Os campos são aparados no cadastro. A regra de duplicidade ignora maiúsculas/minúsculas e espaços externos.
 - Dados carregados também são validados; IDs inválidos, repetidos ou títulos duplicados tornam o arquivo inválido, sem substituí-lo silenciosamente.
 
