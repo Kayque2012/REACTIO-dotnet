@@ -47,8 +47,16 @@ public class MaterialRepository
     public void Salvar(List<MaterialApoio> materiais)
     {
         Directory.CreateDirectory(Path.GetDirectoryName(caminhoArquivo)!);
-        string temporario = caminhoArquivo + ".tmp";
-        File.WriteAllText(temporario, JsonSerializer.Serialize(materiais, opcoes));
-        File.Move(temporario, caminhoArquivo, overwrite: true);
+        string temporario = caminhoArquivo + "." + Guid.NewGuid().ToString("N") + ".tmp";
+        try
+        {
+            File.WriteAllText(temporario, JsonSerializer.Serialize(materiais, opcoes));
+            File.Move(temporario, caminhoArquivo, overwrite: true);
+        }
+        finally
+        {
+            if (File.Exists(temporario))
+                File.Delete(temporario);
+        }
     }
 }
