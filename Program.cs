@@ -16,7 +16,7 @@ Console.WriteLine($"Arquivo de dados: {caminho}");
 
 while (true)
 {
-    Console.WriteLine("\n1 - Cadastrar material\n2 - Listar materiais\n3 - Buscar por título ou tema\n0 - Sair");
+    Console.WriteLine("\n1 - Cadastrar material\n2 - Listar materiais\n3 - Buscar por título ou tema\n4 - Filtrar por tipo\n0 - Sair");
     Console.Write("Opção: ");
     string? opcao = Console.ReadLine();
     if (opcao is null || opcao.Trim() == "0")
@@ -45,8 +45,14 @@ while (true)
             case "3":
                 Mostrar(catalogo.Buscar(Ler("Pesquisar título ou tema: ")));
                 break;
+            case "4":
+                string tipoFiltro = Ler("Tipo (1 - artigo, 2 - vídeo, 3 - guia): ");
+                if (!int.TryParse(tipoFiltro, out int tipoSelecionado) || !Enum.IsDefined(typeof(TipoMaterial), tipoSelecionado))
+                    throw new ValidationException("Tipo inválido. Use 1, 2 ou 3.");
+                Mostrar(catalogo.ListarPorTipo((TipoMaterial)tipoSelecionado));
+                break;
             default:
-                Console.WriteLine("Opção inválida. Escolha 1, 2, 3 ou 0.");
+                Console.WriteLine("Opção inválida. Escolha 1, 2, 3, 4 ou 0.");
                 break;
         }
     }
