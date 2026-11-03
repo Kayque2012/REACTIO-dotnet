@@ -11,3 +11,5 @@ dados/
 .env
 .DS_Store
 Thumbs.db
+*.swp
+*~
